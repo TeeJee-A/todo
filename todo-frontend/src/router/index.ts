@@ -4,43 +4,28 @@ import {
   type RouteRecordRaw,
 } from "vue-router";
 import { useAuthStore } from "../stores/auth";
-// import TasksView from "../views/TasksView.vue";
-import LoginView from "../views/LoginView.vue";
-// import RegisterView from "../views/RegisterView.vue";
-// import NotificationsView from "../views/NotificationsView.vue";
-// import AppLayout from "../components/layouts/AppLayout.vue";
+import Login from "../views/Login.vue";
+import Register from "@/views/Register.vue";
+import Tasks from "@/views/Tasks.vue";
 
-// On type explicitement nos routes pour plus de clarté
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/login",
     name: "login",
-    component: LoginView,
+    component: Login,
     meta: { requiresGuest: true },
   },
-  //   {
-  //     path: "/register",
-  //     name: "register",
-  //     component: RegisterView,
-  //     meta: { requiresGuest: true },
-  //   },
-  //   {
-  // path: "/",
-  // component: AppLayout,
-  // meta: { requiresAuth: true },
-  // children: [
-  //   {
-  //     path: "",
-  //     name: "tasks",
-  //     component: TasksView,
-  //   },
-  //   {
-  //     path: "notifications",
-  //     name: "notifications",
-  //     component: NotificationsView,
-  //   },
-  // ],
-  //   },
+  {
+    path: "/register",
+    name: "register",
+    component: Register,
+    meta: { requiresGuest: true },
+  },
+  {
+    path: "",
+    name: "tasks",
+    component: Tasks,
+  },
 ];
 
 const router = createRouter({
